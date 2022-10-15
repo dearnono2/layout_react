@@ -35,16 +35,16 @@ header {
     }
   }
   &.sub {
-    background: #222;
+    background: #fff;
     .inner {
       h1 a {
-        color: #fff;
+        color: #222;
       }
       #gnb li a {
-        color: #fff;
+        color: #333;
       }
       .fa-bars {
-        color: #fff;
+        color: #333;
       }
     }
   }

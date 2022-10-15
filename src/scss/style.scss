@@ -1,11 +1,15 @@
 $tablet : 1179px;
 $mobile : 539px;
 
+// google font
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+
 //common
 @import 'common/reset';
 @import 'common/footer';
 @import 'common/layout';
 @import 'common/header';
+@import 'common/popup';
 
 //main
 @import 'main/content';

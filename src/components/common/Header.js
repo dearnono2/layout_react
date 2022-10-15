@@ -1,17 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header(props) {
-    const active = { color : 'aqua' };
+    const active = { color : 'orange' };
     return (
         <header className={props.type}>
             <div className="inner">
                 <h1>
-                    <NavLink exact to='/' activeStyle={active}>
+                    <Link to='/'>
                         LOGO
-                    </NavLink>
+                    </Link>
                 </h1>
                 <ul id="gnb">
                     <li>

@@ -15,9 +15,16 @@
     // transition: opacity 0.5s, transform 1s;
     transition: 0.5s;
     h1 {
-      font: normal 30px/1 'arial';
-      color: #777;
-      margin-bottom: 50px;
+      font: normal 60px/1 'work sans';
+      color: #111;
+      margin-bottom: 70px;
+      &::after {
+        content: '';
+        display: block;
+        width: 60px; height: 1px;
+        background: #555;
+        margin-top: 20px;
+      }
     }
   }
   &.on {
