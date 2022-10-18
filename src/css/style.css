@@ -13,6 +13,24 @@ a {
   text-decoration: none;
 }
 
+body {
+  background: #efefef;
+}
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+fieldset {
+  border: none;
+}
+
+.h {
+  position: absolute;
+  top: -9999px;
+  opacity: 0;
+}
+
 footer {
   width: 100%;
   border-top: 1px solid #bbb;
@@ -308,7 +326,97 @@ main {
 .Member figure {
   background: lightgreen;
 }
+.Member > .inner table {
+  width: 100%;
+  border: none;
+  border-top: 2px solid #333;
+  border-bottom: 1px solid #333;
+}
+.Member > .inner table th {
+  width: 20%;
+  border: none;
+  border-bottom: 1px solid #bbb;
+  padding: 15px 30px;
+  text-align: left;
+}
+.Member > .inner table th:last-child {
+  text-align: center;
+}
+.Member > .inner table th input[type=reset],
+.Member > .inner table th input[type=submit] {
+  border: 1px solid #aaa;
+  width: 150px;
+  height: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.Member > .inner table td {
+  border: none;
+  border-bottom: 1px solid #bbb;
+  border-left: 1px solid #bbb;
+  padding: 15px 30px;
+}
+.Member > .inner table td input[type=text],
+.Member > .inner table td input[type=password],
+.Member > .inner table td select,
+.Member > .inner table td textarea {
+  width: 40%;
+  border: 1px solid #aaa;
+  padding: 6px 10px;
+  resize: none;
+}
+.Member > .inner table td label {
+  margin-right: 6px;
+}
+.Member > .inner table td input[type=radio],
+.Member > .inner table td input[type=checkbox] {
+  margin-right: 20px;
+}
+.Member > .inner table td .err {
+  font: 12px/1 "arial";
+  color: hotpink;
+  margin-left: 10px;
+}
 
+@media screen and (max-width: 1179px) {
+  .Member > .inner table td input[type=text],
+.Member > .inner table td input[type=password],
+.Member > .inner table td select,
+.Member > .inner table td textarea {
+    width: 80%;
+  }
+  .Member > .inner table td .err {
+    display: block;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 539px) {
+  .Member > .inner table th {
+    display: none;
+    padding: 15px 0;
+  }
+  .Member > .inner table th:last-child {
+    display: block;
+    width: 100%;
+  }
+  .Member > .inner table th input[type=reset],
+.Member > .inner table th input[type=submit] {
+    width: 48%;
+    margin: 0;
+  }
+  .Member > .inner table td {
+    border-left: 0;
+  }
+  .Member > .inner table td input[type=text],
+.Member > .inner table td input[type=password],
+.Member > .inner table td select,
+.Member > .inner table td textarea {
+    width: 100%;
+  }
+}
 .Youtube article {
   border-top: 1px solid #aaa;
   padding: 20px 0;

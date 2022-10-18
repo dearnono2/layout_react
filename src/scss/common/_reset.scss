@@ -13,3 +13,21 @@ ul,ol,li {
 a {
   text-decoration: none;
 }
+
+body {
+  background: #efefef;
+}
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+fieldset {
+  border: none;
+}
+
+.h {
+  position: absolute;
+  top: -9999px;
+  opacity: 0;
+}
