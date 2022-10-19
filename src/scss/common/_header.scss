@@ -8,10 +8,13 @@ header {
 
     h1 {
       position: absolute;
-      bottom: 20px; left: 0;
+      bottom: 10px; left: 0;
       a {
         font: bold 24px/1 'arial';
         color: #fff;
+      }
+      img {
+        height: 30px;
       }
     }
     #gnb {
@@ -35,6 +38,7 @@ header {
     }
   }
   &.sub {
+    border-bottom: 1px solid #999;
     background: #fff;
     .inner {
       h1 a {
@@ -49,17 +53,17 @@ header {
     }
   }
   &.main {
-    background: #fff;
+    background: #000;
     border-bottom: 1px solid #ccc;
     .inner {
       h1 a {
-        color: #555;
+        color: #fff;
       }
       #gnb li a {
-        color: #555;
+        color: #fff;
       }
       .fa-bars {
-        color: #ddd;
+        color: #fff;
       }
     }
   }

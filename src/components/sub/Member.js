@@ -103,6 +103,12 @@ function Member() {
     setVal({...Val, [name]: isChecked });
   }
 
+  const handleReset = () => {
+    setSubmit(false);
+    setErr({});
+    setVal(initVal);
+  }
+
   const handleSubmit = (e) => {
     // 순서6. 서버 전송 이동을 막아줘야한다. a태그가 아니어도 submit 자체가 가지는 속성을 막는다.
     e.preventDefault();
@@ -258,7 +264,9 @@ function Member() {
                 <th colSpan='2'>
                   <input 
                   type="reset" 
-                  value="CANCLE" />
+                  value="CANCLE"
+                  onClick={handleReset}
+                  />
                   <input 
                   type="submit" 
                   value="SEND"
