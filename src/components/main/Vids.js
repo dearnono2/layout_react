@@ -1,6 +1,6 @@
 function Vids() {
   return(
-    <main id="vids">
+    <main id="vids" className='myScroll'>
       <h1>Vids</h1>
     </main>
   );

@@ -53,8 +53,11 @@ header {
     }
   }
   &.main {
-    background: #000;
+    background: transparent;
     border-bottom: 1px solid #ccc;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 2;
     .inner {
       h1 a {
         color: #fff;
