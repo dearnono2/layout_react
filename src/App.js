@@ -34,9 +34,10 @@ function App() {
 			<Route path='/department' component={Department} />
 			<Route path='/community' component={Community} />
 			<Route path='/gallery' component={Gallery} />
+			<Route path='/youtube' component={Youtube} />
 			<Route path='/location' component={Location} />
 			<Route path='/member' component={Member} />
-			<Route path='/youtube' component={Youtube} />
+			
 
 
 			<Footer />
