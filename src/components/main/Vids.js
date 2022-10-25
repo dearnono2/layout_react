@@ -17,7 +17,7 @@ function Vids() {
         spaceBetween= {60}
         navigation= {true}
         loop= {true}
-        slidesPerView= {1}
+        slidesPerView= {3}
         centeredSlides= {true}
       >
         <SwiperSlide>

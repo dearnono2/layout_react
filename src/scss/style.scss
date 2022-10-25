@@ -1,5 +1,8 @@
+
+$web_note: 1569px;
 $tablet : 1179px;
 $mobile : 539px;
+// 반응형을 최대한 세세하게 디바이스에 맞춰서 5개 이상은 구현을 해야한다.
 
 // google font
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
@@ -22,7 +25,7 @@ $mobile : 539px;
 //sub
 @import 'sub/community';
 @import 'sub/department';
-@import 'sub/gallerty';
+@import 'sub/gallery';
 @import 'sub/location';
 @import 'sub/member';
 @import 'sub/youtube';
