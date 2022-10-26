@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>React App</title>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9cd7318fa05bd7c933e9c968cdc8ceb4"></script>
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <div class="defaults"></div>
+  <div class="mask">LOADING...</div>
+
+  <style>
+    .defaults {
+      position: absolute;
+      top: -9999px;
+    }
+    .mask {
+      width: 100%; height: 100vh;
+      background: #111;
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 11;
+      opacity: 1;
+      transition: opacity 2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font: 20px/1 'arial';
+      color: #fff;
+    }
+    .mask.off {
+      opacity: 0;
+    }
+
+  </style>
+
+  <script>
+    const defaults = document.querySelector('.defaults');
+    const mask = document.querySelector('.mask');
+    let tags = '';
+    const baseURL = 'https://dearnono2.github.io/layout_react/img/';
+    const imgs = [
+      baseURL + 'Community.jpg',
+      baseURL + 'Department.jpg',
+      baseURL + 'Gallery.jpg',
+      baseURL + 'Location.jpg',
+      baseURL + 'Youtube.jpg',
+      baseURL + 'Member.jpg',
+    ];
+    const vids = [
+      baseURL + 'vid2.mp4'
+    ];
+
+    createDOM();
+
+
+    function createDOM() {
+      imgs.forEach(src => tags += `<img src=${src} />`);
+      vids.forEach(src => tags += `<video src=${src}></video>`);
+      defaults.innerHTML = tags;
+    }
+
+    // 이미지소스 로딩완료 체크 함수
+    function loadImg() {
+      return new Promise((res, rej) => {
+        let countImg = 0;
+        const imgDOM = defaults.querySelectorAll('img');
+
+        imgDOM.forEach(img => {
+          img.onload = () => {
+            countImg++;
+            console.log('img loaded', countImg);
+            if(countImg === imgs.length) res(true);
+          }
+        })
+      })
+    }
+
+    // 영상소스 로딩완료 체크 함수
+    function loadVid() {
+      return new Promise((res, rej) => {
+        let countVid = 0;
+        const vidDOM = defaults.querySelectorAll('video');
+
+        vidDOM.forEach(vid => {
+          vid.onloadeddata = () => {
+            countVid++;
+            console.log('vid loaded', countVid);
+            if(countVid === vids.length) res(true);
+          }
+        })
+      })
+    }
+
+    // 캐싱완료 후 더미 요소 제거함수
+    async function enLoading() {
+      // promise.all로 loadImg, loadVid함수가 모두 프로미스를 객체를 반환할 때까지 동기화.
+      const result = Promise.all([loadImg(), loadVid()])
+      .then(result => {
+      const [loadedImg, loadedVid] = result;
+
+        // 두 promise 객체의 반환값이 모두 true이면 (영상, 이미지가 모두 캐싱완료되면)
+        if(loadedImg && loadedVid) mask.classList.add('off');
+        
+        setTimeout(() => {
+          mask.remove();
+          defaults.remove();
+        }, 2000)
+      })
+    }
+  </script>
+
+    <!-- 
+    SSR vs CSR
+    - SSR (Server Side Rendering) : 페이지 이동시 일일이 HTML파일을 서버로부터 불러오는 방식
+    - CSR (Client Side Rendering) : 초기 페이지로딩시 모든 컴포넌트 (JSX) 파일을 한번에 모두 불러오는 방식
+    SSR
+    - 장점: 초기로딩속도 빠름, SEO 좋음
+    - 단점: 페이지 이동시마다 일일이 서버쪽에서 HTML파일을 요청하기 때문에 사용성이 안좋음
+    CSR
+    - 장점: 모든 컴포넌트 파일을 초기에 모두 가져오기 때문에 페이지 이동시 페이지전환 로딩이 없음
+    - 단점: 초기로딩속도가 김, SEO에 취약
+    기본적으로 리액트는 CSR방식이기 때문에 초기로딩속도와 검색엔진 최적화에 취약
+    -- 위화같은 문제점을 해결하기위해서 초기데이터 로딩시에는 SSR방식으로 이후 모든 리액트 컴포넌트가 불러와지면 CSR방식으로 바꿔치지 하는 SSR과 CSR 방식의 혼합 형태로 웹 개발
+  -->
+
+</body>
+</html>

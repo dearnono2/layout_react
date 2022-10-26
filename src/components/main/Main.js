@@ -21,7 +21,7 @@ function Main() {
     pos.current = [];
     secs = main.current.querySelectorAll('.myScroll');
     for (const sec of secs) pos.current.push(sec.offsetTop);
-    console.log(pos.current);
+    // console.log(pos.current);
   }
 
   const activation = () => {

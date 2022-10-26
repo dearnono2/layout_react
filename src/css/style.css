@@ -60,6 +60,12 @@ footer .inner p {
   background: #bbb;
   opacity: 0;
   transition: 1s;
+  overflow: hidden;
+}
+.content figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .content > .inner {
   width: 1180px;
@@ -226,6 +232,30 @@ header.main .inner .fa-bars {
   cursor: pointer;
 }
 
+#mobileMenu {
+  width: 320px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #111;
+  padding: 50px;
+  z-index: 10;
+}
+#mobileMenu h1 {
+  width: 100%;
+}
+#mobileMenu h1 img {
+  width: 100%;
+  margin-bottom: 50px;
+}
+#mobileMenu ul li a {
+  display: block;
+  height: 50px;
+  font: 16px/50px "arial";
+  color: #bbb;
+}
+
 #news {
   width: 100%;
   height: 100vh;
@@ -343,6 +373,12 @@ header.main .inner .fa-bars {
   background: #555;
   position: relative;
   z-index: 1;
+  overflow: hidden;
+}
+#visual video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .scroll_navi {
@@ -606,6 +642,7 @@ header.main .inner .fa-bars {
   cursor: pointer;
   transition: 0.5s;
   font-size: 16px;
+  word-break: break-all;
 }
 .Gallery .frame article .inner .profile span:hover {
   color: aqua;
