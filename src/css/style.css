@@ -206,12 +206,16 @@ header.main .inner .fa-bars {
 .pop .con {
   width: 100%;
   height: 100%;
-  border: 1px solid #555;
 }
 .pop .con iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.pop .con img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .pop .close {
   font: bold 14px/1 "arial";
@@ -588,7 +592,35 @@ header.main .inner .fa-bars {
   color: #777;
   margin-bottom: 30px;
 }
+.Gallery .frame article .inner .profile {
+  display: flex;
+  align-items: center;
+}
+.Gallery .frame article .inner .profile img {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.Gallery .frame article .inner .profile span {
+  color: orange;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 16px;
+}
+.Gallery .frame article .inner .profile span:hover {
+  color: aqua;
+}
 
+@media screen and (max-width: 1179px) {
+  section .frame article {
+    width: 33.3333%;
+  }
+}
+@media screen and (max-width: 539px) {
+  section .frame article {
+    width: 100%;
+  }
+}
 .Location figure {
   background: lightblue;
 }
